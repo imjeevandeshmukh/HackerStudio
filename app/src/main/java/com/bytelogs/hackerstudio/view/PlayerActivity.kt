@@ -88,7 +88,7 @@ class PlayerActivity : AppCompatActivity(), Player.EventListener, PaymentResultL
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Log.e("TTS", "This Language is not supported")
             } else {
-                speakOut("You have selected "+songModel.song+" and artists are "+songModel.artists+" stream starts in few seconds you can play pause and buy this song")
+                speakOut("Click on play pause button to pause the song")
             }
 
         } else {
