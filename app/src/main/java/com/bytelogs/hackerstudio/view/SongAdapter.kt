@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -16,7 +17,7 @@ import com.bytelogs.hackerstudio.model.SongModel
 import kotlinx.android.synthetic.main.item_song.view.*
 
 
-class SongAdapter(var songList: MutableList<SongModel>): RecyclerView.Adapter<SongAdapter.SongViewHolder>() {
+class SongAdapter(var songList: MutableList<SongModel>,var imageView: ImageView): RecyclerView.Adapter<SongAdapter.SongViewHolder>() {
     public lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongAdapter.SongViewHolder {
@@ -31,6 +32,7 @@ class SongAdapter(var songList: MutableList<SongModel>): RecyclerView.Adapter<So
         holder.tvArtist.text = songModel.artists
         Glide.with(context).load(songModel.cover_image).into(holder.ivCover)
         holder.llMain.setOnClickListener(View.OnClickListener {
+            imageView.visibility = View.GONE
             val activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(context as Activity,holder.ivCover,"Cover")
             val intent= Intent(context,PlayerActivity::class.java)
             var bundle = Bundle()

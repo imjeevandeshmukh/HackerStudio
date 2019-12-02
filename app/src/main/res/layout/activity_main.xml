@@ -7,10 +7,18 @@
     tools:context=".view.MainActivity">
 
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSongList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
+    <ImageView
+        android:layout_margin="20dp"
+        android:tint="@color/colorPrimary"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_pan_tool"
+        android:id="@+id/ivPalm"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
 
 </RelativeLayout>

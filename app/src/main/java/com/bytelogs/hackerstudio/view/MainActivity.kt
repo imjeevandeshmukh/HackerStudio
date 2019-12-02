@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     fun initViews(){
         mutableSongList = mutableListOf()
         rvSongList.layoutManager = LinearLayoutManager(this)
-        songAdapter = SongAdapter(mutableSongList)
+        songAdapter = SongAdapter(mutableSongList,ivPalm)
         rvSongList.adapter= songAdapter
         textToSpeech = TextToSpeech(this, this)
 

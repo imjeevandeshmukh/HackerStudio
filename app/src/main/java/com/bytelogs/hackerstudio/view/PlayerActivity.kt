@@ -99,6 +99,7 @@ class PlayerActivity : AppCompatActivity(), Player.EventListener, PaymentResultL
     fun setPlayClickListener() {
         playCard.setOnClickListener(View.OnClickListener {
             if (isPlaying) {
+                ivPalm.visibility = View.GONE
                 speakOut("Song is paused")
                 playIcon.setImageResource(R.drawable.ic_pause)
                 simpleExoplayer.playWhenReady = false
